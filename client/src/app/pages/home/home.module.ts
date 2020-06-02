@@ -4,18 +4,12 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { HOME_ROUTES } from './home.routes';
 import { AgmCoreModule } from '@agm/core';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
+import { CoreModule } from 'src/app/core';
+
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, RouterModule.forChild(HOME_ROUTES),
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatButtonModule,
+  imports: [CoreModule, CommonModule, RouterModule.forChild(HOME_ROUTES),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDO9mLaSnMjXJjJxl-Lm1OO9kT07KiY2_0'
     })],

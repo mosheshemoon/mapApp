@@ -32,16 +32,17 @@ export class LoginComponent {
   login(): void {
     if (this.loginForm.invalid) return;
 
-    this.authService.login(this.loginForm.value).subscribe((val: any) => {  
-        this.router.navigateByUrl('/home');
-    })
+    this.authService.login(this.loginForm.value).subscribe(() =>
+      this.router.navigateByUrl('/home'),
+      error => alert("error login. check your user"))
   }
 
   register(): void {
     if (this.registerForm.invalid) return;
 
-    this.authService.register(this.registerForm.value).subscribe((val: any) => {
-        this.router.navigateByUrl('/home');
-    });
+    this.authService.register(this.registerForm.value).subscribe(() =>
+      this.router.navigateByUrl('/home'),
+      error => alert("error registering")
+    );
   }
 }

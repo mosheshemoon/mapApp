@@ -1,28 +1,28 @@
-import { IUserLocation, IUserLocationModel } from "../models/userLocations";
+import { IUserLocations, IUserLocationsModel } from "../models/userLocations";
 
-import UserLocationModel from "../models/userLocations";
+import UserLocationsModel from "../models/userLocations";
 
 export class UserLocationsRepo {
 
-    async Create(userLocation: IUserLocationModel): Promise<IUserLocation> {
-        const userName = userLocation.userName;
-        const locations = JSON.stringify(userLocation.locations);
-        const user = await UserLocationModel.findOne({userName});
-        userLocation.locations = locations;
+    async Create(userLocations: IUserLocationsModel): Promise<IUserLocations> {
+        const userName = userLocations.userName;
+        const locations = JSON.stringify(userLocations.locations);
+        const user = await UserLocationsModel.findOne({userName});
+        userLocations.locations = locations;
         if (user) {
             user.locations = locations;
             return await user.save();
         }
 
-        const userLocationDocument = new UserLocationModel(userLocation);
+        const userLocationDocument = new UserLocationsModel(userLocations);
         return await userLocationDocument.save();
     }
 
-    async GetLocations(userName: string): Promise<IUserLocation> {
+    async GetLocations(userName: string): Promise<IUserLocations> {
         const query = [
             { $match: { userName } }
         ];
       
-        return await UserLocationModel.aggregate(query).exec();
+        return await UserLocationsModel.aggregate(query).exec();
     }
 }

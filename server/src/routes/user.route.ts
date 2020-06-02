@@ -18,13 +18,16 @@ userRouter.post('/', async (req, res) => {
 userRouter.post('/login', async(req, res) => {
     try {
         const { userName, password } = req.body;
+        console.log("aaaa", userName)
         const user = await userRepo.FindByCredentials(userName, password);
+        console.log("aaaa", user)
         if (!user) {
             return res.status(401).send({error: 'Login failed! Check authentication credentials'});
         }
-
+console.log("aaaa", user)
         const token = await userRepo.GenerateAuthToken(user);
         res.send({ user, token });
+
     } catch (error) {
         res.status(400).send(error)
     }

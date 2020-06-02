@@ -1,12 +1,12 @@
 import * as mongoose from "mongoose";
 import { Schema, Document } from "mongoose";
 
-export interface IUserLocationModel {
+export interface IUserLocationsModel {
     userName: string;
     locations: string;
 }
 
-export interface IUserLocation extends IUserLocationModel, Document {
+export interface IUserLocations extends IUserLocationsModel, Document {
 
 }
 
@@ -15,4 +15,4 @@ const userLocationSchema: Schema = new Schema({
     locations: { type: String, required: true }
 });
 
-export default mongoose.model<IUserLocation>('UserLocation', userLocationSchema);
+export default mongoose.model<IUserLocations>('UserLocations', userLocationSchema);
