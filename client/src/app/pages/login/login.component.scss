@@ -1,0 +1,29 @@
+.login {
+  max-width: 400px;
+  min-width: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  text-align: center;
+
+  &__title {
+    color: #424242;
+    font-size: 30px;
+    margin: 16px 0;
+  }
+}
+
+.tabs {
+  background: #fff;
+}
+
+.form {
+  padding: 24px;
+  overflow: auto;
+
+  &__control {
+    width: 100%;
+  }
+}

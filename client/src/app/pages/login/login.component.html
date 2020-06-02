@@ -1,0 +1,77 @@
+<div class="login">
+  <h1 class="login__title">MAP APP</h1>
+
+  <mat-tab-group class="tabs mat-elevation-z2" mat-align-tabs="center">
+    <mat-tab label="Login">
+      <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
+        <mat-form-field class="form__control">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            type="text"
+            minlength="2"
+            maxlength="20"
+            formControlName="userName"
+            required
+          />
+          <mat-error *ngIf="loginForm.invalid">
+            You must enter valid value
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form__control">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            minlength="6"
+            maxlength="16"
+            formControlName="password"
+            required
+          />
+          <mat-error *ngIf="loginForm.invalid">
+            You must enter valid value
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="submit">Login</button>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="Register">
+      <form class="form" (ngSubmit)="register()" [formGroup]="registerForm">
+        <mat-form-field class="form__control">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            type="text"
+            minlength="2"
+            maxlength="20"
+            formControlName="userName"
+            required
+          />
+          <mat-error *ngIf="loginForm.invalid">
+            You must enter valid value
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form__control">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            minlength="6"
+            maxlength="16"
+            formControlName="password"
+            required
+          />
+          <mat-error *ngIf="loginForm.invalid">
+            You must enter valid value
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="submit">Register</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>

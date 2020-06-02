@@ -1,0 +1,32 @@
+.agm {
+    height: 100%;
+}
+
+.map{
+    flex: 1
+}
+
+.main{
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+}
+
+h2{
+    color: white;
+    font-style: italic;
+}
+
+.toolbar{
+    height: 43px;
+    background-color: #3f51b5;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-button{
+    position: fixed;
+    top: 87%;
+    left: 5%;
+}

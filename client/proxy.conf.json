@@ -1,0 +1,12 @@
+{
+    "/user/*": {
+      "target": "http://localhost:80",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/userLocations/*": {
+      "target": "http://localhost:80",
+      "secure": false,
+      "changeOrigin": true
+    }
+}
